@@ -34,7 +34,7 @@ namespace RestfulMovies.Model
             {
                 entity.Property(e => e.Genre).IsUnicode(false);
 
-                entity.Property(e => e.Lenght).IsUnicode(false);
+                entity.Property(e => e.Length).IsUnicode(false);
 
                 entity.Property(e => e.Name).IsUnicode(false);
             });

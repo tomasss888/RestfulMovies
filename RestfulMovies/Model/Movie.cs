@@ -21,7 +21,7 @@ namespace RestfulMovies.Model
         [StringLength(128)]
         public string Genre { get; set; }
         [StringLength(128)]
-        public string Lenght { get; set; }
+        public string Length { get; set; }
         [Column(TypeName = "date")]
         public DateTime? Date { get; set; }
 
