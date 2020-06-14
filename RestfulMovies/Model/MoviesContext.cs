@@ -15,9 +15,9 @@ namespace RestfulMovies.Model
         {
         }
 
-        public virtual DbSet<Filmas> Filmas { get; set; }
-        public virtual DbSet<Peržiurėti> Peržiurėti { get; set; }
-        public virtual DbSet<StebėjimoSąrašas> StebėjimoSąrašas { get; set; }
+        public virtual DbSet<Movie> Movie { get; set; }
+        public virtual DbSet<Seen> Seen { get; set; }
+        public virtual DbSet<Wishlist> Wishlist { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -30,23 +30,33 @@ namespace RestfulMovies.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Peržiurėti>(entity =>
+            modelBuilder.Entity<Movie>(entity =>
             {
-                entity.Property(e => e.Komentaras).IsUnicode(false);
+                entity.Property(e => e.Genre).IsUnicode(false);
 
-                entity.HasOne(d => d.Filmas)
-                    .WithMany(p => p.Peržiurėti)
-                    .HasForeignKey(d => d.FilmasId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Peržiurėt__Filma__571DF1D5");
+                entity.Property(e => e.Lenght).IsUnicode(false);
+
+                entity.Property(e => e.Name).IsUnicode(false);
             });
 
-            modelBuilder.Entity<StebėjimoSąrašas>(entity =>
+            modelBuilder.Entity<Seen>(entity =>
             {
-                entity.HasOne(d => d.Filmas)
-                    .WithMany(p => p.StebėjimoSąrašas)
-                    .HasForeignKey(d => d.FilmasId)
-                    .HasConstraintName("FK__Stebėjimo__Filma__5165187F");
+                entity.Property(e => e.Comment).IsUnicode(false);
+
+                entity.HasOne(d => d.Movie)
+                    .WithMany(p => p.Seen)
+                    .HasForeignKey(d => d.MovieId)
+                    .HasConstraintName("FK__Seen__Movie_ID__68487DD7");
+            });
+
+            modelBuilder.Entity<Wishlist>(entity =>
+            {
+                entity.Property(e => e.Date).IsUnicode(false);
+
+                entity.HasOne(d => d.Movie)
+                    .WithMany(p => p.Wishlist)
+                    .HasForeignKey(d => d.MovieId)
+                    .HasConstraintName("FK__Wishlist__Movie___619B8048");
             });
 
             OnModelCreatingPartial(modelBuilder);
