@@ -11,8 +11,9 @@ namespace RestfulMovies.Model
         public int Id { get; set; }
         [Column("Movie_ID")]
         public int? MovieId { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? Date { get; set; }
+        [StringLength(128)]
+        public string Date { get; set; }
+        
         public int? Rating { get; set; }
         [StringLength(128)]
         public string Comment { get; set; }
