@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using RestfulMovies.Model;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Http;
+using System;
 
 namespace RestfulMovies
 {
@@ -17,11 +19,20 @@ namespace RestfulMovies
                Configuration = configuration;
         }
 
+
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Caching
+            services.AddResponseCaching(options =>
+            {
+                options.MaximumBodySize = 1024;
+                options.UseCaseSensitivePaths = true;
+            });
+
             services.AddControllers();
             var connection = Configuration.GetConnectionString("MoviesContext");
             services.AddDbContext<MoviesContext>(options => options.UseSqlServer(connection));
@@ -47,6 +58,23 @@ namespace RestfulMovies
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //Caching
+            app.UseResponseCaching();
+            app.Use(async (context, next) =>
+            {
+                context.Response.GetTypedHeaders().CacheControl =
+                    new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
+                    {
+                        Public = true,
+                        MaxAge = TimeSpan.FromSeconds(10)
+                    };
+                context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
+                    new string[] { "Accept-Encoding" };
+
+                await next();
+            });
+
 
             app.UseEndpoints(endpoints =>
             {
