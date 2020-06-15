@@ -8,8 +8,6 @@ using RestfulMovies.Model;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Http;
 using System;
-using IMDB.Libs.IMDB;
-using IMDB.Libs.Services;
 
 namespace RestfulMovies
 {
@@ -37,10 +35,6 @@ namespace RestfulMovies
             services.AddDbContext<MoviesContext>(options => options.UseSqlServer(connection));
             services.AddMvcCore()
             .AddApiExplorer();
-
-            //Singletons for IMDB stuff
-            services.AddSingleton<IIMDBServices, IMDBServices>();
-            services.AddSingleton<IGetTop250, GetTop250>();
 
             services.AddSwaggerGen(c =>
             {

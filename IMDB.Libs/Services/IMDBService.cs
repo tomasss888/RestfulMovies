@@ -1,20 +1,29 @@
-﻿using IMDB.Libs.IMDB;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace IMDB.Libs.Services
 {
-    public class IMDBServices : IIMDBServices
+    public static class IMDBServices
     {
-        private static IGetTop250 _getTop250;
-
-        public IMDBServices(IGetTop250 getTop250)
+        public static async Task<string> getTop250()
         {
-            _getTop250 = getTop250;
-        }
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-RapidAPI-Host", "imdb8.p.rapidapi.com");
+                client.DefaultRequestHeaders.Add("X-RapidAPI-Key", "3f5bc5a363msh84ab41cb5de7e9bp1d5ed3jsn0d046b228b2f");
 
-        public async Task<string> getTop250()
-        {
-            return await _getTop250.ReturnTop250();
+                var url = new Uri("https://imdb8.p.rapidapi.com/title/get-top-rated-movies");
+
+                var response = await client.GetAsync(url);
+
+                string json;
+
+                using (var content = response.Content)
+                    json = await content.ReadAsStringAsync();
+
+                return json.ToString();
+            }
         }
     }
 }
