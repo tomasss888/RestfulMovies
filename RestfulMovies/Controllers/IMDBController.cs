@@ -14,5 +14,14 @@ namespace RestfulMovies.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet]
+        [Route("imdb8/getSimillar")]
+        public async Task<IActionResult> getSimillar(string mID)
+        {
+            var result = await IMDBServices.getSimilarMovies(mID);
+
+            return Ok(result);
+        }
     }
 }
