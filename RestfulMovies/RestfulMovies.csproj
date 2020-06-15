@@ -25,5 +25,9 @@
     <Folder Include="Model\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IMDB.Libs\IMDBService.Libs.csproj" />
+  </ItemGroup>
+
 
 </Project>
