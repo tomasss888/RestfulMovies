@@ -7,6 +7,13 @@ using RestfulMovies.Model;
 
 namespace RestfulMovies
 {
+    /// <summary>
+    /// Controller class of seen
+    /// </summary>
+    /// <param name="GetSeen"> Uses GET to print </param>>
+    /// <param name="PutSeen"> Uses PUT to update by id </param>>
+    /// <param name="PostSeen"> Uses POST to create new  </param>>
+    /// <param name="DeleteSeen"> Uses DELETE to delete data </param>>
     [Route("api/[controller]")]
     [ApiController]
     public class SeenController : ControllerBase

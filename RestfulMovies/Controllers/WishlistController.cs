@@ -7,6 +7,13 @@ using RestfulMovies.Model;
 
 namespace RestfulMovies
 {
+    /// <summary>
+    /// Controller class of wishlist
+    /// </summary>
+    /// <param name="GetWishlist"> Uses GET to print </param>>
+    /// <param name="PutWishlist"> Uses PUT to update by id </param>>
+    /// <param name="PostWishlist"> Uses POST to create new  </param>>
+    /// <param name="DeleteWishlist"> Uses DELETE to delete data </param>>
     [Route("api/[controller]")]
     [ApiController]
     public class WishlistController : ControllerBase

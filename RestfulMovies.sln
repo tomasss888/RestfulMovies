@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulMovies", "RestfulMov
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMDBService.Libs", "IMDB.Libs\IMDBService.Libs.csproj", "{068859A9-D971-4F1A-82E6-D29926EE693E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulMoviesTests", "RestfulMoviesTests\RestfulMoviesTests.csproj", "{13280D52-CD29-4479-8154-AB882F5243DD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{068859A9-D971-4F1A-82E6-D29926EE693E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{068859A9-D971-4F1A-82E6-D29926EE693E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{068859A9-D971-4F1A-82E6-D29926EE693E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13280D52-CD29-4479-8154-AB882F5243DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13280D52-CD29-4479-8154-AB882F5243DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13280D52-CD29-4479-8154-AB882F5243DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13280D52-CD29-4479-8154-AB882F5243DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

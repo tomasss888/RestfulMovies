@@ -4,6 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestfulMovies.Model
 {
+    /// <summary>
+    /// Defines Database table Seen
+    /// </summary>
+    /// <param name="Id"> Holds id number </param>>
+    /// <param name="MovieId"> Links this table with one of chosen movies by id</param>>
+    /// <param name="Date"> When the movie was watched </param>>
+    /// <param name="Rating"> User rating of a movie </param>>
+    /// <param name="Comment"> Comment abot movie </param>>
     public partial class Seen
     {
         [Key]

@@ -4,6 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RestfulMovies.Controllers
 {
+    /// <summary>
+    /// Controller class of IMDB external API
+    /// </summary>
+    /// <param name="get250Top"> gets 250 results of movies </param>>
+    /// <param name="getSimillar"> get similar movies by id </param>>
     public class IMDBController : Controller
     {
         [HttpGet]

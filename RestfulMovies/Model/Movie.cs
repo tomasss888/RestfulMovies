@@ -5,6 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestfulMovies.Model
 {
+    /// <summary>
+    /// Defines Database table Movie
+    /// </summary>
+    /// <param name="Id"> Holds id number </param>>
+    /// <param name="Name"> Name of a Movie </param>>
+    /// <param name="Genre"> Genre of a movie </param>>
+    /// <param name="Length"> TOtal runtime of movie in minutes </param>>
+    /// <param name="Date"> Date of creation of a movie </param>>
     public partial class Movie
     {
         public Movie()

@@ -2,6 +2,11 @@
 
 namespace IMDB.Libs.Models
 {
+    /// <summary>
+    /// Defines data for external API results
+    /// </summary>
+    /// <param name="id"> id of movie </param>>
+    /// <param name="chartRating"> Rating of movie </param>>
     [DataContract]
     public class Data
     {
