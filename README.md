@@ -1,7 +1,7 @@
 # RestfulMovies
 A simple RESTful web application which we created to learn the basics of creating RESTful web application in ASP.NET Core framework.
 
-![image](https://user-images.githubusercontent.com/50613873/84809643-ecfb1800-b012-11ea-9750-c8595e420250.png)
+![image](https://user-images.githubusercontent.com/50613873/84821246-7d415900-b023-11ea-819f-c07f7271a73a.png)
 
 ## Table of Contents
 * [Team Members](#team-members)
@@ -15,17 +15,17 @@ A simple RESTful web application which we created to learn the basics of creatin
 * Karolina Glodenytė
 
 ## Installation
-To run our project, first you need to open it with Visual Studio. Second step would be to the project as IIS Express, by doing that RESTful web service will open.
+To run our project, first you need to open it with Visual Studio. Second step would be to run the project as IIS Express, by doing that RESTful web service will open in your browser.
 
 ## Tech/framework used
 * **Language**: C#
-* **IDE(ntegrated development environment)**: Visual Studio
+* **IDE(integrated development environment)**: Visual Studio
 * **Framework**: ASP.NET Core
 * **DBMS(database management system)**: Microsoft Azure
 
 ## Database used
 The database of our project consists of 3 database tables  
-**Movie**():
+**Movie**:
 ```
 CREATE TABLE Movie
 (
