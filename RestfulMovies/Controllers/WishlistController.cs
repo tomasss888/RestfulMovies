@@ -19,14 +19,14 @@ namespace RestfulMovies
         }
 
         // GET: api/Wishlist
-        [HttpGet("GetAll")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Wishlist>>> GetWishlist()
         {
             return await _context.Wishlist.ToListAsync();
         }
 
         // GET: api/Wishlist/5
-        [HttpGet("Get/{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Wishlist>> GetWishlist(int id)
         {
             var wishlist = await _context.Wishlist.FindAsync(id);
@@ -42,7 +42,7 @@ namespace RestfulMovies
         // PUT: api/Wishlist/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("Put/{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutWishlist(int id, Wishlist wishlist)
         {
             if (id != wishlist.Id)
@@ -74,7 +74,7 @@ namespace RestfulMovies
         // POST: api/Wishlist
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost("Post")]
+        [HttpPost]
         public async Task<ActionResult<Wishlist>> PostWishlist(Wishlist wishlist)
         {
             _context.Wishlist.Add(wishlist);
@@ -84,7 +84,7 @@ namespace RestfulMovies
         }
 
         // DELETE: api/Wishlist/5
-        [HttpDelete("Delete/{id}")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<Wishlist>> DeleteWishlist(int id)
         {
             var wishlist = await _context.Wishlist.FindAsync(id);

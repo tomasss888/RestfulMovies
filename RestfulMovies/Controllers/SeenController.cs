@@ -19,14 +19,14 @@ namespace RestfulMovies
         }
 
         // GET: api/Seen
-        [HttpGet("GetAll")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Seen>>> GetSeen()
         {
             return await _context.Seen.ToListAsync();
         }
 
         // GET: api/Seen/5
-        [HttpGet("Get/{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Seen>> GetSeen(int id)
         {
             var seen = await _context.Seen.FindAsync(id);
@@ -42,7 +42,7 @@ namespace RestfulMovies
         // PUT: api/Seen/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("Put/{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutSeen(int id, Seen seen)
         {
             if (id != seen.Id)
@@ -74,7 +74,7 @@ namespace RestfulMovies
         // POST: api/Seen
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost("Post")]
+        [HttpPost]
         public async Task<ActionResult<Seen>> PostSeen(Seen seen)
         {
             _context.Seen.Add(seen);
@@ -84,7 +84,7 @@ namespace RestfulMovies
         }
 
         // DELETE: api/Seen/5
-        [HttpDelete("Delete/{id}")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<Seen>> DeleteSeen(int id)
         {
             var seen = await _context.Seen.FindAsync(id);
