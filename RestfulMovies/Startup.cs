@@ -38,7 +38,7 @@ namespace RestfulMovies
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestfulCore", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestfulMovies", Version = "v1" });
             });
         }
 
