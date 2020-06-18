@@ -10,9 +10,9 @@ A simple RESTful web application which we created to learn the basics of creatin
 * [Database used](#database-used)
 
 ## Team Members
-* Tomas Stanislovėnas
-* Gediminas Alšauskas
-* Karolina Glodenytė
+* Tomas Stanislovėnas - dev
+* Gediminas Alšauskas - dev
+* Karolina Glodenytė - dev
 
 ## Installation
 To run our project, first you need to open it with Visual Studio. Second step would be to run the project as IIS Express, by doing that RESTful web service will open in your browser.
