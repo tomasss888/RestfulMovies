@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using RestfulMovies.Model;
 
 namespace RestfulMovies
@@ -87,7 +88,11 @@ namespace RestfulMovies
             _context.Movie.Add(movie);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
+            Dictionary<string, string> _Links = new Dictionary<string, string>();
+            _Links.Add("AddSeen", "/api/Seen");
+            _Links.Add("AddWishlist", "/api/Wishlist");
+
+            return Ok(JsonConvert.SerializeObject(new Model.HATEOAS() { Links = _Links }));
         }
 
         // DELETE: api/Movie/5
@@ -110,7 +115,5 @@ namespace RestfulMovies
         {
             return _context.Movie.Any(e => e.Id == id);
         }
-
     }
-
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -84,6 +85,9 @@ namespace RestfulMovies
         [HttpPost]
         public async Task<ActionResult<Seen>> PostSeen(Seen seen)
         {
+            //if (_context.Movie.Find().Id == seen.Id)
+            //    Console.WriteLine("KAZKAAAS");
+                
             _context.Seen.Add(seen);
             await _context.SaveChangesAsync();
 

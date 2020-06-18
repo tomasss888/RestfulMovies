@@ -9,11 +9,6 @@ namespace IMDB.Libs.Services
         private static string xRapid_Host = "imdb8.p.rapidapi.com";
         private static string xRapid_Key = "3f5bc5a363msh84ab41cb5de7e9bp1d5ed3jsn0d046b228b2f";
 
-        /*
-         Will we need further process of received responses and unique methods with uniq actions,
-         or do we make a single universal request?
-        */
-
         public static async Task<string> getTop250()
         {
             using (var client = new HttpClient())
